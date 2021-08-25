@@ -1,0 +1,110 @@
+{
+    "apiVersion": "machine.openshift.io/v1beta1",
+    "kind": "MachineSet",
+    "metadata": {
+        "annotations": {
+            "machine.openshift.io/GPU": "0",
+            "machine.openshift.io/memoryMb": "8192",
+            "machine.openshift.io/vCPU": "2"
+        },
+        "creationTimestamp": "2021-08-23T08:36:47Z",
+        "generation": 1,
+        "labels": {
+            "machine.openshift.io/cluster-api-cluster": "liqcui-oc48605-xvsn9"
+        },
+        "name": "openshift-psap-qe-gpu-node01",
+        "namespace": "openshift-machine-api",
+        "resourceVersion": "62960",
+        "uid": "bbbfddde-3206-441a-8789-0a86bd5c3118"
+    },
+    "spec": {
+        "replicas": 1,
+        "selector": {
+            "matchLabels": {
+                "machine.openshift.io/cluster-api-cluster": "liqcui-oc48605-xvsn9",
+                "machine.openshift.io/cluster-api-machineset": "openshift-psap-qe-gpu-node01"
+            }
+        },
+        "template": {
+            "metadata": {
+                "labels": {
+                    "machine.openshift.io/cluster-api-cluster": "liqcui-oc48605-xvsn9",
+                    "machine.openshift.io/cluster-api-machine-role": "worker",
+                    "machine.openshift.io/cluster-api-machine-type": "worker",
+                    "machine.openshift.io/cluster-api-machineset": "openshift-psap-qe-gpu-node01"
+                }
+            },
+            "spec": {
+                "metadata": {},
+                "providerSpec": {
+                    "value": {
+                        "ami": {
+                            "id": "ami-0c17b13bb8b268411"
+                        },
+                        "apiVersion": "awsproviderconfig.openshift.io/v1beta1",
+                        "blockDevices": [
+                            {
+                                "ebs": {
+                                    "encrypted": true,
+                                    "iops": 0,
+                                    "kmsKey": {
+                                        "arn": ""
+                                    },
+                                    "volumeSize": 120,
+                                    "volumeType": "gp2"
+                                }
+                            }
+                        ],
+                        "credentialsSecret": {
+                            "name": "aws-cloud-credentials"
+                        },
+                        "deviceIndex": 0,
+                        "iamInstanceProfile": {
+                            "id": "liqcui-oc48605-xvsn9-worker-profile"
+                        },
+                        "instanceType": "g4dn.xlarge",
+                        "kind": "AWSMachineProviderConfig",
+                        "metadata": {
+                            "creationTimestamp": null
+                        },
+                        "placement": {
+                            "availabilityZone": "us-east-2b",
+                            "region": "us-east-2"
+                        },
+                        "securityGroups": [
+                            {
+                                "filters": [
+                                    {
+                                        "name": "tag:Name",
+                                        "values": [
+                                            "liqcui-oc48605-xvsn9-worker-sg"
+                                        ]
+                                    }
+                                ]
+                            }
+                        ],
+                        "subnet": {
+                            "id": "subnet-0b7f283ac1db4efb3"
+                        },
+                        "tags": [
+                            {
+                                "name": "kubernetes.io/cluster/liqcui-oc48605-xvsn9",
+                                "value": "owned"
+                            }
+                        ],
+                        "userDataSecret": {
+                            "name": "worker-user-data"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "status": {
+        "availableReplicas": 1,
+        "fullyLabeledReplicas": 1,
+        "observedGeneration": 1,
+        "readyReplicas": 1,
+        "replicas": 1
+    }
+}

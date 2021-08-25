@@ -1,0 +1,21 @@
+Cluster version is 4.8.6
+
+Updates:
+
+VERSION                           IMAGE
+4.9.0-0.ci-2021-08-21-061901      registry.ci.openshift.org/ocp/release@sha256:684c0867bb4fff0c3519d2131e3744118346fc14a933273d505d446e22d5bad8
+4.9.0-0.ci-2021-08-21-095721      registry.ci.openshift.org/ocp/release@sha256:24648f94df0104215b660fba613126ac39005917e9d5b8f382766bf4399bdc1c
+4.9.0-0.ci-2021-08-21-132935      registry.ci.openshift.org/ocp/release@sha256:a51fb64f903e8ee7c3022287f9aa8938337080483c9816f0f12ed0619283534d
+4.9.0-0.ci-2021-08-21-153959      registry.ci.openshift.org/ocp/release@sha256:0251fa03357cf7057eca17f27cda086d70ec6669842ecebc2cbc52287d48af31
+4.9.0-0.ci-2021-08-22-012119      registry.ci.openshift.org/ocp/release@sha256:b35fb2ba28f155ddf2ae930130e9b82b6d28a6a22acac1a2d234eb9dd19cb30c
+4.9.0-0.ci-2021-08-22-091714      registry.ci.openshift.org/ocp/release@sha256:aa0764a01e7ebe5189ef226e1439297eee3740cfa836d66f39270d990b6b292c
+4.9.0-0.ci-2021-08-22-200023      registry.ci.openshift.org/ocp/release@sha256:86e0fc738ca048cda59cd08fb863e02b03220a227877e3e349ae81936d3ee821
+4.9.0-0.ci-2021-08-22-210800      registry.ci.openshift.org/ocp/release@sha256:85b7305dce97a63425102ef09bb802d70612c247dd589a84713e025665fab70a
+4.9.0-0.ci-2021-08-22-234333      registry.ci.openshift.org/ocp/release@sha256:51f491e547662441e4cc5859c62b81657f4df05841da31fc781f52aed4731934
+4.9.0-0.ci-2021-08-23-041010      registry.ci.openshift.org/ocp/release@sha256:7616c522f82460332a3d33a44e5003afddfdb64384d4dad0e67c04e5d2475e00
+4.9.0-0.ci-2021-08-23-065638      registry.ci.openshift.org/ocp/release@sha256:733d49dc09d83f4865bf3d0fe39a6c56932d7e21da4c76f1e160fdb0321be8cb
+4.9.0-0.nightly-2021-08-19-184748 registry.ci.openshift.org/ocp/release@sha256:8ffc8c4a46d1e78e3d8560631d411f6313fc47de99d7cd0a0c321b7de1d88c25
+4.9.0-0.nightly-2021-08-20-115908 registry.ci.openshift.org/ocp/release@sha256:baba24249fc45eadbf850faf5e34f046db1145293addfab41e6a1932121441e6
+4.9.0-0.nightly-2021-08-20-133022 registry.ci.openshift.org/ocp/release@sha256:2add326d0c7cdf1bf856e4e689e8654280333cf5fc5f38c4ac14877f9b639aaa
+4.9.0-0.nightly-2021-08-21-023452 registry.ci.openshift.org/ocp/release@sha256:18d99bf998c7bfe4b934f5e3ffa4643b0424c5e4e8724e30b86d40fcfdc7b68d
+4.9.0-fc.0                        registry.ci.openshift.org/ocp/release@sha256:7e7fdee3d2a4ea95db5e356fed533fc80e350544633f175d438072e51ae8f0ff
