@@ -1,0 +1,103 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  labels:
+    app: nvidia-node-status-exporter
+  name: nvidia-node-status-exporter-alerts
+  namespace: gpu-operator-resources
+spec:
+  groups:
+  - name: Alert on node deployment failure
+    rules:
+    - alert: GPUOperatorNodeDeploymentFailed
+      annotations:
+        description: |
+          GPU Operator could not expose GPUs for more than 30min in the
+          node {{ $labels.node }}
+        summary: GPU Operator could not expose GPUs
+      expr: |
+        gpu_operator_node_device_plugin_devices_total == 0
+      for: 30m
+      labels:
+        severity: warning
+    - alert: GPUOperatorNodeDeploymentDriverFailed
+      annotations:
+        description: |
+          GPU Operator could not expose GPUs for more than 30min and
+          nvidia driver could not be properly deployed in the node
+          {{ $labels.node }}
+        summary: GPU Operator could not expose GPUs (Driver)
+      expr: |
+        gpu_operator_node_driver_validation == 0
+      for: 30m
+      labels:
+        severity: warning
+    - alert: GPUOperatorNodeDeploymentToolkitFailed
+      annotations:
+        description: |
+          GPU Operator could not expose GPUs for more than 30min and the
+          GPU container-toolkit is not working properly in the node
+          {{ $labels.node }}
+        summary: GPU Operator could not expose GPUs (Toolkit not working)
+      expr: |
+        gpu_operator_node_toolkit_ready == 0
+        AND
+        gpu_operator_node_driver_validation == 1
+      for: 30m
+      labels:
+        severity: warning
+    - alert: GPUOperatorNodeDeploymentCudaFailed
+      annotations:
+        description: |
+          GPU Operator could not expose GPUs for more than 30min and CUDA
+          applications could not run in the node {{ $labels.node }}
+        summary: GPU Operator could not expose GPUs (CUDA not working)
+      expr: |
+        gpu_operator_node_cuda_ready == 0
+        AND
+        gpu_operator_node_driver_validation == 1
+      for: 30m
+      labels:
+        severity: warning
+    - name: nvidia_gpu.rules
+    rules:
+    - alert: GPUUnusedResources
+      expr: dcgm_gpu_utilization == 0
+      for: 10m 
+      labels:
+        severity: warning
+      annotations:
+        description: GPU idle for the last 5min, do some work!
+        summary: GPU Node sad, nothing to do
+    - alert: GPUTemperatureTooHigh
+      expr: dcgm_gpu_temp > 60
+      for: 10m
+      labels:
+        severity: warning
+      annotations:
+        description: GPU temperature too high for the last 10min
+        summary: GPU Node sad, it is getting hot in here
+    - alert: GPUTemperatureTooHigh
+      expr: dcgm_gpu_temp > 70
+      for: 10m
+      labels:
+        severity: warning
+      annotations:
+        description: GPU temperature very high for the last 10min
+        summary: GPU Node sad, it is getting hot in here
+    - alert: GPUTemperatureTooHigh
+      expr: dcgm_gpu_temp > 80
+      for: 10m
+      labels:
+        severity: critical
+      annotations:
+        description: GPU temperature critical for the last 10min
+        summary: GPU Node sad, it is getting hot in here
+    - alert: GPUThermalViolation
+      expr: dcgm_thermal_violation > 1
+      for: 1m
+      labels:
+        severity: critical
+      annotations:
+        description: GPU Thermal Violation
+        summary: GPU Node is too hot, may break your GPU        

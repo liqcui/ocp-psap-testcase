@@ -39,4 +39,4 @@ spec:
         ref: "master"
         uri: "https://github.com/openshift-psap/kvc-simple-kmod.git"
 EOF
-oc get pods -n multi-build -w
+watch -d oc get pods -n multi-build

@@ -16,7 +16,7 @@ if [ $# -eq 1 ];then
         OCP_UPGRADE_IMAGE=`cat ./payload.txt | awk -F':' '{print $2":"$3}'| tr -d '"' | tr -d ' '`
         echo OCP_UPGRADE_IMAGE is $OCP_UPGRADE_IMAGE
         #grep -A1 $OCP_VERSION ./graph| grep payload | awk -F':' "{print $2}"
-        oc adm upgrade --to-image=$OCP_UPGRADE_IMAGE --allow-explicit-upgrade
+        oc adm upgrade --to-image=$OCP_UPGRADE_IMAGE --allow-explicit-upgrade --force
   fi
 else
   	echo -e "$0 OCP_VERSION(4.9.0-0.nightly-2021-08-18-084341,4.9.0-fc.0)\nPlease input the OCP Version you want to upgrade"

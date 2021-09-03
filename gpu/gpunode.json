@@ -4,31 +4,31 @@
     "metadata": {
         "annotations": {
             "machine.openshift.io/GPU": "0",
-            "machine.openshift.io/memoryMb": "8192",
-            "machine.openshift.io/vCPU": "2"
+            "machine.openshift.io/memoryMb": "16384",
+            "machine.openshift.io/vCPU": "4"
         },
-        "creationTimestamp": "2021-08-23T08:36:47Z",
+        "creationTimestamp": "2021-09-01T08:29:30Z",
         "generation": 1,
         "labels": {
-            "machine.openshift.io/cluster-api-cluster": "liqcui-oc48605-xvsn9"
+            "machine.openshift.io/cluster-api-cluster": "liqcui-ocaws007-lpxf6"
         },
         "name": "openshift-psap-qe-gpu-node01",
         "namespace": "openshift-machine-api",
-        "resourceVersion": "62960",
-        "uid": "bbbfddde-3206-441a-8789-0a86bd5c3118"
+        "resourceVersion": "71771",
+        "uid": "0d418420-5da5-4aec-96e3-331a4ec2fdc7"
     },
     "spec": {
         "replicas": 1,
         "selector": {
             "matchLabels": {
-                "machine.openshift.io/cluster-api-cluster": "liqcui-oc48605-xvsn9",
+                "machine.openshift.io/cluster-api-cluster": "liqcui-ocaws007-lpxf6",
                 "machine.openshift.io/cluster-api-machineset": "openshift-psap-qe-gpu-node01"
             }
         },
         "template": {
             "metadata": {
                 "labels": {
-                    "machine.openshift.io/cluster-api-cluster": "liqcui-oc48605-xvsn9",
+                    "machine.openshift.io/cluster-api-cluster": "liqcui-ocaws007-lpxf6",
                     "machine.openshift.io/cluster-api-machine-role": "worker",
                     "machine.openshift.io/cluster-api-machine-type": "worker",
                     "machine.openshift.io/cluster-api-machineset": "openshift-psap-qe-gpu-node01"
@@ -39,7 +39,7 @@
                 "providerSpec": {
                     "value": {
                         "ami": {
-                            "id": "ami-0c17b13bb8b268411"
+                            "id": "ami-045089e3aeb7444db"
                         },
                         "apiVersion": "awsproviderconfig.openshift.io/v1beta1",
                         "blockDevices": [
@@ -60,7 +60,7 @@
                         },
                         "deviceIndex": 0,
                         "iamInstanceProfile": {
-                            "id": "liqcui-oc48605-xvsn9-worker-profile"
+                            "id": "liqcui-ocaws007-lpxf6-worker-profile"
                         },
                         "instanceType": "g4dn.xlarge",
                         "kind": "AWSMachineProviderConfig",
@@ -68,7 +68,7 @@
                             "creationTimestamp": null
                         },
                         "placement": {
-                            "availabilityZone": "us-east-2b",
+                            "availabilityZone": "us-east-2c",
                             "region": "us-east-2"
                         },
                         "securityGroups": [
@@ -77,18 +77,25 @@
                                     {
                                         "name": "tag:Name",
                                         "values": [
-                                            "liqcui-oc48605-xvsn9-worker-sg"
+                                            "liqcui-ocaws007-lpxf6-worker-sg"
                                         ]
                                     }
                                 ]
                             }
                         ],
                         "subnet": {
-                            "id": "subnet-0b7f283ac1db4efb3"
+                            "filters": [
+                                {
+                                    "name": "tag:Name",
+                                    "values": [
+                                        "liqcui-ocaws007-lpxf6-private-us-east-2c"
+                                    ]
+                                }
+                            ]
                         },
                         "tags": [
                             {
-                                "name": "kubernetes.io/cluster/liqcui-oc48605-xvsn9",
+                                "name": "kubernetes.io/cluster/liqcui-ocaws007-lpxf6",
                                 "value": "owned"
                             }
                         ],

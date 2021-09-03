@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  generateName: cpumanager-
+spec:
+  containers:
+  - name: cpumanager
+    image: gcr.io/google_containers/pause-amd64:3.0
+    resources:
+      requests:
+        cpu: 1
+        memory: "1G"
+      limits:
+        cpu: 1
+        memory: "1G"
+  nodeSelector:
+    cpumanager: "true"

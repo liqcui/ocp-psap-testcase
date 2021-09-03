@@ -14,6 +14,7 @@ else
         oc create -f ./gpunode.json
 fi
 echo "Checking GPU node status ..."
-sleep 30s
+sleep 120s
 oc get machines -n openshift-machine-api |grep g4dn.xlarge
-
+sleep 60s
+oc get nodes
