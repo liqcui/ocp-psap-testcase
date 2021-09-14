@@ -7,28 +7,28 @@
             "machine.openshift.io/memoryMb": "16384",
             "machine.openshift.io/vCPU": "4"
         },
-        "creationTimestamp": "2021-09-01T08:29:30Z",
+        "creationTimestamp": "2021-09-13T23:38:37Z",
         "generation": 1,
         "labels": {
-            "machine.openshift.io/cluster-api-cluster": "liqcui-ocaws007-lpxf6"
+            "machine.openshift.io/cluster-api-cluster": "liqcui-ocdiscn2-5mzlr"
         },
         "name": "openshift-psap-qe-gpu-node01",
         "namespace": "openshift-machine-api",
-        "resourceVersion": "71771",
-        "uid": "0d418420-5da5-4aec-96e3-331a4ec2fdc7"
+        "resourceVersion": "198168",
+        "uid": "837cb32f-dbaa-4298-ac7b-d920fd3dd1da"
     },
     "spec": {
         "replicas": 1,
         "selector": {
             "matchLabels": {
-                "machine.openshift.io/cluster-api-cluster": "liqcui-ocaws007-lpxf6",
+                "machine.openshift.io/cluster-api-cluster": "liqcui-ocdiscn2-5mzlr",
                 "machine.openshift.io/cluster-api-machineset": "openshift-psap-qe-gpu-node01"
             }
         },
         "template": {
             "metadata": {
                 "labels": {
-                    "machine.openshift.io/cluster-api-cluster": "liqcui-ocaws007-lpxf6",
+                    "machine.openshift.io/cluster-api-cluster": "liqcui-ocdiscn2-5mzlr",
                     "machine.openshift.io/cluster-api-machine-role": "worker",
                     "machine.openshift.io/cluster-api-machine-type": "worker",
                     "machine.openshift.io/cluster-api-machineset": "openshift-psap-qe-gpu-node01"
@@ -39,7 +39,7 @@
                 "providerSpec": {
                     "value": {
                         "ami": {
-                            "id": "ami-045089e3aeb7444db"
+                            "id": "ami-0c17b13bb8b268411"
                         },
                         "apiVersion": "awsproviderconfig.openshift.io/v1beta1",
                         "blockDevices": [
@@ -60,7 +60,7 @@
                         },
                         "deviceIndex": 0,
                         "iamInstanceProfile": {
-                            "id": "liqcui-ocaws007-lpxf6-worker-profile"
+                            "id": "liqcui-ocdiscn2-5mzlr-worker-profile"
                         },
                         "instanceType": "g4dn.xlarge",
                         "kind": "AWSMachineProviderConfig",
@@ -68,7 +68,7 @@
                             "creationTimestamp": null
                         },
                         "placement": {
-                            "availabilityZone": "us-east-2c",
+                            "availabilityZone": "us-east-2b",
                             "region": "us-east-2"
                         },
                         "securityGroups": [
@@ -77,25 +77,18 @@
                                     {
                                         "name": "tag:Name",
                                         "values": [
-                                            "liqcui-ocaws007-lpxf6-worker-sg"
+                                            "liqcui-ocdiscn2-5mzlr-worker-sg"
                                         ]
                                     }
                                 ]
                             }
                         ],
                         "subnet": {
-                            "filters": [
-                                {
-                                    "name": "tag:Name",
-                                    "values": [
-                                        "liqcui-ocaws007-lpxf6-private-us-east-2c"
-                                    ]
-                                }
-                            ]
+                            "id": "subnet-04f82714d4269548b"
                         },
                         "tags": [
                             {
-                                "name": "kubernetes.io/cluster/liqcui-ocaws007-lpxf6",
+                                "name": "kubernetes.io/cluster/liqcui-ocdiscn2-5mzlr",
                                 "value": "owned"
                             }
                         ],

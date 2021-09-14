@@ -4,8 +4,8 @@ metadata:
   name: pao-operator
   namespace: openshift-marketplace
 spec:
-  image: quay.io/openshift-psap-qe/redhat-operator-index:v4.8
-  #image: quay.io/openshift-kni/performance-addon-operator-index:4.7-snapshot
+        #image: quay.io/openshift-psap-qe/redhat-operator-index:v4.8
+  image: quay.io/openshift-kni/performance-addon-operator-index:4.9-snapshot
   sourceType: grpc
   displayName: Openshift PSAP QE RedHat
   publisher: Openshift QE

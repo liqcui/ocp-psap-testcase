@@ -9,14 +9,14 @@ if [ $# -eq 1 ];then
   oc adm upgrade status>./to_be_updated_version.txt
   grep $OCP_VERSION ./to_be_updated_version.txt
   if [ $? -eq 0 ];then
-  	oc adm upgrade --to=$OCP_VERSION
+  	oc adm upgrade --to=$OCP_VERSION --allow-explicit-upgrade=true --force=true
   else
 	curl -fsSL -o ./graph https://openshift-release.apps.ci.l2s4.p1.openshiftapps.com/graph
         grep -A1 $OCP_VERSION ./graph| grep payload>./payload.txt
         OCP_UPGRADE_IMAGE=`cat ./payload.txt | awk -F':' '{print $2":"$3}'| tr -d '"' | tr -d ' '`
         echo OCP_UPGRADE_IMAGE is $OCP_UPGRADE_IMAGE
         #grep -A1 $OCP_VERSION ./graph| grep payload | awk -F':' "{print $2}"
-        oc adm upgrade --to-image=$OCP_UPGRADE_IMAGE --allow-explicit-upgrade --force
+        oc adm upgrade --to-image=$OCP_UPGRADE_IMAGE --allow-explicit-upgrade=true --force=true
   fi
 else
   	echo -e "$0 OCP_VERSION(4.9.0-0.nightly-2021-08-18-084341,4.9.0-fc.0)\nPlease input the OCP Version you want to upgrade"

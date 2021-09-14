@@ -1,0 +1,9 @@
+apiVersion: performance.openshift.io/v2
+kind: PerformanceProfile
+metadata:
+ name: example-performanceprofile
+spec:
+  realTimeKernel:
+    enabled: true
+  nodeSelector:
+   node-role.kubernetes.io/worker-rt: ""
