@@ -5,6 +5,7 @@ echo "Replace name "
 sed -i "s/$MACHINE_SET/openshift-psap-qe-gpu-node01/g" ./gpunode.json
 grep openshift-psap-qe-gpu-node01 ./gpunode.json
 sed -i 's/"instanceType":.*/"instanceType": "g4dn.xlarge",/' ./gpunode.json
+sed -i 's/"replicas": 2,/"replicas": 1,/' ./gpunode.json
 grep instanceType ./gpunode.json
 oc get machines -n openshift-machine-api |grep g4dn.xlarge
 if [ $? -eq 0 ];then

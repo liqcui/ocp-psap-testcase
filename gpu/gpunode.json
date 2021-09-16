@@ -7,28 +7,28 @@
             "machine.openshift.io/memoryMb": "16384",
             "machine.openshift.io/vCPU": "4"
         },
-        "creationTimestamp": "2021-09-13T23:38:37Z",
+        "creationTimestamp": "2021-09-16T06:31:19Z",
         "generation": 1,
         "labels": {
-            "machine.openshift.io/cluster-api-cluster": "liqcui-ocdiscn2-5mzlr"
+            "machine.openshift.io/cluster-api-cluster": "liqcui-oc4811-dlrfr"
         },
         "name": "openshift-psap-qe-gpu-node01",
         "namespace": "openshift-machine-api",
-        "resourceVersion": "198168",
-        "uid": "837cb32f-dbaa-4298-ac7b-d920fd3dd1da"
+        "resourceVersion": "48741",
+        "uid": "96168a0d-b8e5-454b-b41d-d0e36f3f7154"
     },
     "spec": {
         "replicas": 1,
         "selector": {
             "matchLabels": {
-                "machine.openshift.io/cluster-api-cluster": "liqcui-ocdiscn2-5mzlr",
+                "machine.openshift.io/cluster-api-cluster": "liqcui-oc4811-dlrfr",
                 "machine.openshift.io/cluster-api-machineset": "openshift-psap-qe-gpu-node01"
             }
         },
         "template": {
             "metadata": {
                 "labels": {
-                    "machine.openshift.io/cluster-api-cluster": "liqcui-ocdiscn2-5mzlr",
+                    "machine.openshift.io/cluster-api-cluster": "liqcui-oc4811-dlrfr",
                     "machine.openshift.io/cluster-api-machine-role": "worker",
                     "machine.openshift.io/cluster-api-machine-type": "worker",
                     "machine.openshift.io/cluster-api-machineset": "openshift-psap-qe-gpu-node01"
@@ -60,7 +60,7 @@
                         },
                         "deviceIndex": 0,
                         "iamInstanceProfile": {
-                            "id": "liqcui-ocdiscn2-5mzlr-worker-profile"
+                            "id": "liqcui-oc4811-dlrfr-worker-profile"
                         },
                         "instanceType": "g4dn.xlarge",
                         "kind": "AWSMachineProviderConfig",
@@ -68,7 +68,7 @@
                             "creationTimestamp": null
                         },
                         "placement": {
-                            "availabilityZone": "us-east-2b",
+                            "availabilityZone": "us-east-2c",
                             "region": "us-east-2"
                         },
                         "securityGroups": [
@@ -77,18 +77,25 @@
                                     {
                                         "name": "tag:Name",
                                         "values": [
-                                            "liqcui-ocdiscn2-5mzlr-worker-sg"
+                                            "liqcui-oc4811-dlrfr-worker-sg"
                                         ]
                                     }
                                 ]
                             }
                         ],
                         "subnet": {
-                            "id": "subnet-04f82714d4269548b"
+                            "filters": [
+                                {
+                                    "name": "tag:Name",
+                                    "values": [
+                                        "liqcui-oc4811-dlrfr-private-us-east-2c"
+                                    ]
+                                }
+                            ]
                         },
                         "tags": [
                             {
-                                "name": "kubernetes.io/cluster/liqcui-ocdiscn2-5mzlr",
+                                "name": "kubernetes.io/cluster/liqcui-oc4811-dlrfr",
                                 "value": "owned"
                             }
                         ],

@@ -1,1 +1,1 @@
-      "payload": "registry.ci.openshift.org/ocp/release@sha256:e59aa35782396678853cc077611741706065d94dc764679416765f9201ac7b5c"
+      "payload": "registry.ci.openshift.org/ocp/release@sha256:6d3041f1237b6e46c1cf6ff1f2a81ac123f4f21e8b294d57ad5ba19c9ff3f047"

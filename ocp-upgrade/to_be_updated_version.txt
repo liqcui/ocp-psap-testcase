@@ -1,3 +1,13 @@
-Cluster version is 4.9.0-fc.0
+Cluster version is 4.8.11
 
-No updates available. You may force an upgrade to a specific release image, but doing so may not be supported and result in downtime or data loss.
+Updates:
+
+VERSION                           IMAGE
+4.8.12                            registry.ci.openshift.org/ocp/release@sha256:c3af995af7ee85e88c43c943e0a64c7066d90e77fafdabc7b22a095e4ea3c25a
+4.9.0-0.ci-2021-09-14-140556      registry.ci.openshift.org/ocp/release@sha256:026f306b2363e11187d7a74d16b09bc31e24be0961f3caec38f7ebbd31476b15
+4.9.0-0.ci-2021-09-14-181011      registry.ci.openshift.org/ocp/release@sha256:219a78bd2633d5e7e45069f8fb191c9be7b73b71bee7e10274a91a075662463d
+4.9.0-0.ci-2021-09-14-191907      registry.ci.openshift.org/ocp/release@sha256:43316dfa1b620657fe4991c927959c257bf6eab4b328445d95b64b3df66d8772
+4.9.0-0.nightly-2021-09-10-170926 registry.ci.openshift.org/ocp/release@sha256:8d01ffd2bd08e49e137a6872d2d18adcb334fe92a9102d25497b099e7baf16d0
+4.9.0-0.nightly-2021-09-14-152233 registry.ci.openshift.org/ocp/release@sha256:74131d917d5184983a4139d76a459f98668eac89a80dd61a8eb2fb439eb69402
+4.9.0-0.nightly-2021-09-14-200602 registry.ci.openshift.org/ocp/release@sha256:80b742eab31f1e6751f5542a65cf988f1e46daf366004676b1b401450358e989
+4.9.0-rc.1                        registry.ci.openshift.org/ocp/release@sha256:2cce76f4dc2400d3c374f76ac0aa4e481579fce293e732f0b27775b7218f2c8d
